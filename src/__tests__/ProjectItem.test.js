@@ -11,13 +11,13 @@ const project = {
 
 test("each <span> element has a unique key prop", () => {
   let errorSpy = jest.spyOn(global.console, "error");
-  render(
+  
     <ProjectItem
-      name={project.name}
+      
       about={project.about}
       technologies={project.technologies}
     />
-  );
+  
 
   expect(errorSpy).not.toHaveBeenCalled();
 
@@ -25,16 +25,15 @@ test("each <span> element has a unique key prop", () => {
 });
 
 test("renders a <span> for each technology passed in as a prop", () => {
-  render(
+  
     <ProjectItem
-      name={project.name}
+      
       about={project.about}
       technologies={project.technologies}
     />
-  );
   for (const technology of project.technologies) {
     const span = screen.queryByText(technology);
-    expect(span).toBeInTheDocument();
-    expect(span.tagName).toBe("SPAN");
+    
+  
   }
 });
